@@ -6,6 +6,8 @@ Requirements:-----
 
 python==3.7.7 or above set python path to system and user environment variable .
 
+to dawnload python - https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe
+
 python libraries (pip install library-name)
 
     Selenium   -- pip install selenium
