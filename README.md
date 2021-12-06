@@ -16,5 +16,6 @@ python libraries (pip install library-name)
 id_pass.csv file  -- enter emailID , Password in first row of the file. file should be in same folder as script.
 
 chromedriver == driver version should be same as chrome also place it in same folder. for me its Version 96.0.4664.45
+data.txt - Give single input as url from same application to redirect to your url.
 
 By using this script you can login as much as user to the website via Gmail.
