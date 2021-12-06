@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 
-def Connecting_To_Browser(id_str, pass_str):
+def Connecting_To_Browser(id_str, pass_str,data):
     if id_str != "" and pass_str != "":
         
         options = webdriver.ChromeOptions()
@@ -38,14 +38,20 @@ def Connecting_To_Browser(id_str, pass_str):
 
         password_next_button = browser.find_element_by_id("passwordNext")
         password_next_button.click()
-        time.sleep(10)
+        time.sleep(4)
 
-        password_next_button = browser.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[1]/nav/ul/li[4]/a")
-        state = password_next_button.click()
-        print(state)
+        #password_next_button = browser.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[1]/nav/ul/li[4]/a")
+        #state = password_next_button.click()
+        #print(state)
+        browser.get(data)
         
     return 0
 
+text_file = open("data.txt", "r")
+data = text_file.read()
+text_file.close()
+ 
+print(data)
 with open('id_pass.csv', 'r') as read_obj:
     # pass the file object to reader() to get the reader object
     csv_reader = reader(read_obj)
@@ -66,7 +72,7 @@ for i in range(len(ids_pass_list)):
     print("Login Id: ", id_str)
     print("Login Password: ", id_pass)
     #c = 'tab'+str(count)
-    Connecting_To_Browser(id_str, id_pass)
+    Connecting_To_Browser(id_str, id_pass,data)
     print("Login successful!")
     print("number of active chrome agent ",count)
     count=count+1
